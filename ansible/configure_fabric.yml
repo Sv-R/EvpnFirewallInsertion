@@ -1,0 +1,42 @@
+- name: Deploy file and restart service
+  hosts: sonic-vm
+  become: yes
+  vars:
+    # Remove clab name prefixes so config file structure remains portable 
+    device_name: "{{ inventory_hostname | regex_replace('^clab-[^-]+-(.*)$', '\\1') }}"
+    frr_conf: "../files/{{ device_name }}/frr.conf"
+    config_db: "../files/{{ device_name }}/config_db.json"
+    service_name: "bgp"
+  
+  tasks:
+   - name: Roll out config_db
+     tags: [config_db]
+     block:
+       - name: Copy config_db to remote device
+         ansible.builtin.copy:
+           src: "{{ config_db }}"
+           dest: "/etc/sonic/config_db.json"
+           owner: root
+           group: root
+           mode: '0644'
+           backup: yes
+
+       - name: Reload config_db
+         ansible.builtin.shell: "sudo config reload -yf"
+
+   - name: Roll out frr config
+     tags: [frr]
+     block:
+       - name: Copy frr config to remote device
+         ansible.builtin.copy:
+           src: "{{ frr_conf }}"
+           dest: "/etc/sonic/frr/frr.conf"
+           owner: root
+           group: root
+           mode: '0644'
+           backup: yes
+   
+       - name: Restart service
+         ansible.builtin.systemd:
+           name: "{{ service_name }}"
+           state: restarted

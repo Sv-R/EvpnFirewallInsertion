@@ -1,0 +1,6 @@
+---
+- import_playbook: configure_fabric.yml
+  tags: [fabric]
+
+- import_playbook: configure_fw.yml
+  tags: [firewalls]

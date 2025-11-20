@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  network-node:
+    build: .
+    image: alpine-network-node:latest
+    container_name: network-node
+    hostname: router01
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
+    ports:
+      - "2222:22"
+    volumes:
+      - ./frr.conf:/etc/frr/frr.conf:ro
+      - ./conntrackd.conf:/etc/conntrackd/conntrackd.conf:ro
+    networks:
+      - network_lab
+    restart: unless-stopped
+
+networks:
+  network_lab:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

@@ -1,0 +1,214 @@
+# configure_fw.yml
+---
+- name: Configure LACP, VRFs, VLANs, and optional IPs
+  hosts: linux
+  become: yes
+  gather_facts: yes
+  vars:
+    bond_interface: bond0
+    bond_mode: 802.3ad
+    lacp_rate: fast
+    xmit_hash_policy: layer3+4
+    miimon: 100
+    min_links: 1
+    slave_interfaces:
+      - eth1
+      - eth2
+    public_vrf: "Vrf-Public"
+    private_vrf: "Vrf-Private"
+    
+  tasks:
+    - name: Gather Info
+      tags: [always]
+      block:
+        - name: Gather existing network interfaces
+          command: "ip -o link show"
+          register: existing_interfaces
+          changed_when: false
+
+        - name: Gather existing VRFs
+          shell: "ip -br link show type vrf || true"
+          register: existing_vrfs
+          changed_when: false
+
+        - name: Gather existing IP addresses
+          command: "ip -o addr show"
+          register: existing_ips
+          changed_when: false
+
+    - name: Setup PortChannel
+      tags: [portchannel]
+      block:
+        - name: Check if bond interface exists
+          set_fact:
+            bond_exists: "{{ bond_interface in existing_interfaces.stdout }}"
+
+        - name: Create bond interface
+          command: "ip link add {{ bond_interface }} type bond"
+          when: not bond_exists
+          register: bond_created
+
+        - name: Set bond mode to LACP (802.3ad)
+          command: "ip link set {{ bond_interface }} type bond mode {{ bond_mode }}"
+          when: bond_created is changed 
+
+        - name: Set LACP rate
+          command: "ip link set {{ bond_interface }} type bond lacp_rate {{ lacp_rate }}"
+          when: bond_created is changed 
+
+        - name: Set transmit hash policy
+          command: "ip link set {{ bond_interface }} type bond xmit_hash_policy {{ xmit_hash_policy }}"
+          when: bond_created is changed 
+
+        - name: Set MII monitoring interval
+          command: "ip link set {{ bond_interface }} type bond miimon {{ miimon }}"
+          when: bond_created is changed 
+
+        - name: Set minimum links
+          command: "ip link set {{ bond_interface }} type bond min_links {{ min_links }}"
+          when: bond_created is changed 
+
+        - name: Check slave interface status
+          shell: "ip link show {{ item }} | grep -q 'master {{ bond_interface }}' && echo 'attached' || echo 'not_attached'"
+          loop: "{{ slave_interfaces }}"
+          register: slave_status
+
+        - name: Bring down slave interfaces 
+          command: "ip link set {{ item.item }} down"
+          loop: "{{ slave_status.results }}"
+          when: "'not_attached' in item.stdout"
+
+        - name: Attach slave interfaces to bond 
+          command: "ip link set {{ item.item }} master {{ bond_interface }}"
+          loop: "{{ slave_status.results }}"
+          when: "'not_attached' in item.stdout"
+
+        - name: Bring up slave interfaces
+          command: "ip link set {{ item }} up"
+          loop: "{{ slave_interfaces }}"
+
+        - name: Bring up bond device
+          command: "ip link set {{ bond_interface }} up"
+
+    - name: Setup VRFs
+      tags: [vrf]
+      block:
+        - name: Check if public VRF exists
+          set_fact:
+            public_vrf_exists: "{{ public_vrf in existing_vrfs.stdout }}"
+
+        - name: Check if private VRF exists
+          set_fact:
+            private_vrf_exists: "{{ private_vrf in existing_vrfs.stdout }}"
+
+        - name: Create public VRF
+          command: "ip link add {{ public_vrf }} type vrf table 1001"
+          when: not public_vrf_exists
+
+        - name: Create private VRF
+          command: "ip link add {{ private_vrf }} type vrf table 1002"
+          when: not private_vrf_exists
+
+        - name: Bring VRFs up
+          loop:
+            - "{{ public_vrf }}"
+            - "{{ private_vrf }}"
+          command: "ip link set {{ item }} up"
+
+    - name: Setup public VLANs
+      tags: [vlan, public]
+      block:
+        - name: Check if public VLANs exist
+          shell: "ip link show {{ bond_interface }}.{{ item.id }} 2>/dev/null && echo 'exists' || echo 'missing'"
+          loop: "{{ public_vlans }}"
+          register: public_vlan_check
+
+        - name: Create public VLAN interfaces
+          command: "ip link add link {{ bond_interface }} name {{ bond_interface }}.{{ item.item.id }} type vlan id {{ item.item.id }}"
+          loop: "{{ public_vlan_check.results }}"
+          when: "'missing' in item.stdout"
+
+        - name: Attach public VLANs to VRF
+          loop: "{{ public_vlans }}"
+          command: "ip link set {{ bond_interface }}.{{ item.id }} master {{ public_vrf }}"
+
+        - name: Bring up public VLAN interfaces
+          loop: "{{ public_vlans }}"
+          command: "ip link set {{ bond_interface }}.{{ item.id }} up"
+
+        - name: Check existing IPs on public VLANs
+          shell: "ip addr show {{ bond_interface }}.{{ item.id }} | grep -q '{{ item.ip }}' && echo 'exists' || echo 'missing'"
+          loop: "{{ public_vlans }}"
+          when: item.ip is defined
+          register: public_ip_check
+
+        - name: Assign IPs to public VLANs (if not present)
+          command: "ip addr add {{ item.item.ip }} dev {{ bond_interface }}.{{ item.item.id }}"
+          loop: "{{ public_ip_check.results }}"
+          when: 
+            - "item.item.ip is defined"
+            - "'missing' in item.stdout"
+
+    - name: Setup private VLANs
+      tags: [vlan, private]
+      block:
+        - name: Check if private VLANs exist
+          shell: "ip link show {{ bond_interface }}.{{ item.id }} 2>/dev/null && echo 'exists' || echo 'missing'"
+          loop: "{{ private_vlans }}"
+          register: private_vlan_check
+
+        - name: Create private VLAN interfaces
+          command: "ip link add link {{ bond_interface }} name {{ bond_interface }}.{{ item.item.id }} type vlan id {{ item.item.id }}"
+          loop: "{{ private_vlan_check.results }}"
+          when: "'missing' in item.stdout"
+
+        - name: Attach private VLANs to VRF
+          loop: "{{ private_vlans }}"
+          command: "ip link set {{ bond_interface }}.{{ item.id }} master {{ private_vrf }}"
+
+        - name: Bring up private VLAN interfaces
+          loop: "{{ private_vlans }}"
+          command: "ip link set {{ bond_interface }}.{{ item.id }} up"
+
+        - name: Check existing IPs on private VLANs
+          shell: "ip addr show {{ bond_interface }}.{{ item.id }} | grep -q '{{ item.ip }}' && echo 'exists' || echo 'missing'"
+          loop: "{{ private_vlans }}"
+          when: item.ip is defined
+          register: private_ip_check
+
+        - name: Assign IPs to private VLANs (if not present)
+          command: "ip addr add {{ item.item.ip }} dev {{ bond_interface }}.{{ item.item.id }}"
+          loop: "{{ private_ip_check.results }}"
+          when: 
+            - "item.item.ip is defined"
+            - "'missing' in item.stdout"
+
+    - name: Display bond status
+      command: "cat /proc/net/bonding/{{ bond_interface }}"
+      register: bond_status
+
+    - name: Show bond configuration
+      debug:
+        var: bond_status.stdout_lines
+
+    # PBR workaround because pakets using a leaked route are skipping nft postrouting chain
+    - name: Configure nftables
+      tags: [nftables, nft]
+      block:
+        - name: Check if fwmark rule exists
+          shell: "ip rule list | grep -q 'fwmark 0x1 lookup 200' && echo 'exists' || echo 'missing'"
+          register: fwmark_check
+
+        - name: Add IP Rule for fwmark
+          command: "ip rule add fwmark 0x1 lookup 200"
+          when: "'missing' in fwmark_check.stdout"
+
+        - name: Load nftables
+          command: "nft -f /root/nftables.conf"
+
+    # Importing default route from Vrf-Public sometimes bugs out. Service restart fixes this
+    - name: Restarting frr
+      tags: [frr]
+      block:
+       - name: Restart service
+         command: service frr restart

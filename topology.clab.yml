@@ -1,0 +1,52 @@
+name: FirewallInsertion
+
+topology:
+  nodes:
+    spine01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    workerLeaf01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    serviceLeaf01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    serviceLeaf02:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    borderGateway01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    fw01:
+      kind: linux
+      image: firewall:latest
+      binds:
+       - files/fw01/daemons:/etc/frr/daemons
+       - files/fw01/frr.conf:/etc/frr/frr.conf
+       - files/fw01/nftables.conf:/root/nftables.conf
+    fw02:
+      kind: linux
+      image: firewall:latest
+      binds:
+       - files/fw02/daemons:/etc/frr/daemons
+       - files/fw02/frr.conf:/etc/frr/frr.conf
+       - files/fw02/nftables.conf:/root/nftables.conf
+    externalRouter01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+    worker01:
+      kind: sonic-vm
+      image: vrnetlab/sonic_sonic-vs:202505
+
+  links:
+    - endpoints: ["spine01:eth1", "serviceLeaf01:eth1"]
+    - endpoints: ["spine01:eth2", "serviceLeaf02:eth1"]
+    - endpoints: ["spine01:eth3", "workerLeaf01:eth1"]
+    - endpoints: ["spine01:eth5", "borderGateway01:eth1"]
+    - endpoints: ["serviceLeaf01:eth2", "fw01:eth1"]
+    - endpoints: ["serviceLeaf01:eth3", "fw02:eth1"]
+    - endpoints: ["serviceLeaf02:eth2", "fw01:eth2"]
+    - endpoints: ["serviceLeaf02:eth3", "fw02:eth2"]
+    - endpoints: ["borderGateway01:eth2", "externalRouter01:eth1"]
+    - endpoints: ["workerLeaf01:eth2", "worker01:eth1"]
+
