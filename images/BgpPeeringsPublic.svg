@@ -1,0 +1,297 @@
+<svg id="write-document" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect id="write-doc-background" width="100%" height="100%" fill="#808080"/>
+<defs id="write-defs">
+<image id='thumbnail' xlink:href='data:image/png;base64,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mBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGEoYEIMQwETYhgKmBDDUMCEGIaZWIQYhplYhBiGciHEMBQwIYahgAkxDAVMiGH+CZgy6DHuf95ZAAAAAElFTkSuQmCC'/>
+
+<script type="text/writeconfig">
+  <int name="docFormatVersion" value="2" />
+  <int name="pageNum" value="0" />
+  <float name="xOffset" value="-9.64912319" />
+  <float name="yOffset" value="-139.473679" />
+</script>
+</defs>
+<svg class="write-page" x="10" y="10" width="1005.768px" height="518.622px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="write-content write-v3" xruling="0" yruling="0" marginLeft="0" papercolor="#FFFFFF" rulecolor="#FF0000FF">
+    <g class="ruleline write-std-ruling write-scale-down" fill="none" stroke="#0000FF" stroke-width="1" shape-rendering="crispEdges" vector-effect="non-scaling-stroke">
+      <rect class="pagerect" fill="#FFFFFF" stroke="none" x="0" y="0" width="1005.768" height="518.622" />
+    </g>
+    <svg version="1.2" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xml:space="preserve" width="482.769pt" height="248.939pt" viewBox="1735 13734 17031 8782">
+      <defs>
+        <font id="EmbeddedFont_1" horz-adv-x="0" horz-adv-x="0">
+          <font-face font-family="Noto Sans embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="2170" descent="609" />
+          <missing-glyph horiz-adv-x="2048" d="M0 0 l2047 0 0 2047 -2047 0 0 -2047 0 0" />
+          <glyph unicode="v" horiz-adv-x="1036" d="M416 0 l-416 1098 193 0 233 -648 c11 -30 23 -63 35 -100 12 -37 23 -72 33 -105 9 -34 16 -62 20 -85 l8 0 c6 23 14 52 24 86 10 34 22 69 35 106 13 37 24 70 33 98 l234 648 192 0 -417 -1098 -207 0 0 0" />
+          <glyph unicode="u" horiz-adv-x="927" d="M1092 1098 l0 -1098 -148 0 -26 146 -9 0 c-35 -57 -84 -99 -147 -126 -63 -27 -130 -40 -201 -40 -132 0 -232 32 -299 95 -67 64 -100 165 -100 304 l0 719 182 0 0 -706 c0 -175 81 -263 244 -263 121 0 206 35 253 103 47 68 70 166 70 295 l0 571 181 0 0 0" />
+          <glyph unicode="t" horiz-adv-x="660" d="M541 127 c27 0 55 3 84 8 28 4 52 9 69 15 l0 -137 c-19 -10 -46 -18 -82 -24 -35 -6 -69 -9 -102 -9 -57 0 -110 10 -159 30 -48 19 -87 54 -118 103 -30 49 -45 118 -45 207 l0 639 -155 0 0 86 157 71 72 234 107 0 0 -252 317 0 0 -139 -317 0 0 -635 c0 -67 16 -116 48 -148 32 -33 73 -49 124 -49 l0 0" />
+          <glyph unicode="s" horiz-adv-x="783" d="M889 304 c0 -107 -40 -187 -119 -242 -79 -55 -186 -82 -319 -82 -77 0 -143 6 -198 18 -55 13 -104 30 -146 52 l0 163 c43 -21 96 -42 158 -60 62 -18 125 -28 190 -28 91 0 157 15 198 44 41 30 62 69 62 118 0 27 -8 52 -23 74 -15 22 -42 44 -81 65 -39 22 -94 47 -167 74 -71 27 -131 55 -182 82 -50 27 -89 60 -117 98 -27 38 -41 88 -41 148 0 93 38 164 114 215 76 50 175 75 298 75 67 0 129 -6 187 -19 59 -13 113 -31 163 -54 l-61 -144 c-47 20 -95 36 -146 50 -50 13 -102 20 -155 20 -74 0 -130 -12 -169 -36 -39 -24 -59 -56 -59 -97 0 -30 9 -56 27 -77 18 -21 48 -41 89 -61 42 -20 97 -44 167 -71 70 -26 129 -52 178 -80 49 -27 87 -60 113 -99 26 -39 39 -88 39 -146 l0 0" />
+          <glyph unicode="r" horiz-adv-x="639" d="M686 1118 c21 0 43 -1 67 -3 24 -2 44 -5 62 -9 l-22 -166 c-18 4 -38 7 -59 10 -21 3 -41 4 -60 4 -56 0 -109 -15 -158 -46 -49 -31 -88 -74 -118 -129 -29 -55 -44 -120 -44 -193 l0 -586 -180 0 0 1098 148 0 20 -201 8 0 c36 60 81 112 137 155 56 44 123 66 199 66 l0 0" />
+          <glyph unicode="n" horiz-adv-x="923" d="M702 1118 c132 0 231 -32 297 -95 67 -64 101 -166 101 -308 l0 -715 -178 0 0 702 c0 176 -82 264 -246 264 -122 0 -206 -34 -252 -102 -46 -68 -70 -166 -70 -295 l0 -569 -180 0 0 1098 145 0 27 -150 10 0 c36 57 85 100 148 128 63 28 129 42 198 42 l0 0" />
+          <glyph unicode="l" horiz-adv-x="181" d="M354 0 l-180 0 0 1556 180 0 0 -1556 0 0" />
+          <glyph unicode="i" horiz-adv-x="212" d="M266 1509 c28 0 52 -9 73 -28 21 -18 32 -47 32 -87 0 -38 -11 -67 -32 -86 -21 -19 -45 -28 -73 -28 -30 0 -55 9 -76 28 -20 19 -30 48 -30 86 0 40 10 69 30 87 21 19 46 28 76 28 l0 0 m88 -411 l0 -1098 -180 0 0 1098 180 0 0 0" />
+          <glyph unicode="f" horiz-adv-x="760" d="M680 958 l-277 0 0 -959 -180 0 0 959 -192 0 0 84 192 61 0 64 c0 142 32 244 94 306 63 62 151 93 263 93 43 0 83 -4 119 -11 37 -8 68 -16 94 -26 l-48 -141 c-21 7 -47 14 -75 20 -29 7 -58 11 -88 11 -60 0 -105 -21 -135 -61 -29 -40 -44 -103 -44 -189 l0 -72 277 0 0 -139 0 0" />
+          <glyph unicode="e" horiz-adv-x="935" d="M598 1118 c94 0 175 -20 243 -61 67 -41 119 -99 155 -173 37 -74 55 -161 55 -261 l0 -108 -752 0 c3 -125 34 -219 95 -284 61 -65 146 -97 255 -97 70 0 132 6 186 19 53 13 109 32 166 56 l0 -157 c-56 -25 -111 -43 -165 -55 -55 -11 -120 -17 -195 -17 -104 0 -196 21 -275 63 -80 43 -142 106 -187 190 -44 84 -66 187 -66 308 0 120 20 223 60 309 40 86 97 152 170 199 73 46 158 69 255 69 l0 0 m-2 -147 c-86 0 -154 -28 -204 -83 -50 -55 -79 -132 -89 -230 l559 0 c-1 93 -23 168 -65 226 -43 58 -110 87 -201 87 l0 0" />
+          <glyph unicode="c" horiz-adv-x="800" d="M614 -20 c-97 0 -183 20 -259 59 -75 40 -135 101 -178 185 -43 83 -64 189 -64 319 0 135 22 245 67 330 45 85 106 147 184 186 77 40 164 60 263 60 56 0 110 -6 161 -18 52 -11 95 -25 127 -42 l-55 -149 c-33 12 -71 24 -115 35 -43 11 -84 16 -122 16 -216 0 -324 -139 -324 -416 0 -132 26 -234 79 -304 52 -70 131 -105 234 -105 60 0 113 6 159 18 46 12 88 27 126 45 l0 -160 c-37 -19 -77 -33 -122 -44 -44 -10 -98 -15 -161 -15 l0 0" />
+          <glyph unicode="b" horiz-adv-x="969" d="M354 1178 c0 -46 -1 -90 -3 -130 -2 -40 -4 -72 -7 -95 l10 0 c32 46 75 85 129 116 55 32 125 47 211 47 137 0 246 -47 329 -142 83 -95 124 -236 124 -425 0 -188 -42 -330 -125 -426 -83 -95 -193 -143 -328 -143 -86 0 -156 16 -211 47 -54 31 -97 69 -129 113 l-14 0 -37 -139 -129 0 0 1556 180 0 0 -379 0 0 m310 -211 c-116 0 -197 -33 -242 -100 -45 -67 -68 -171 -68 -312 l0 -8 c0 -135 22 -238 67 -310 44 -72 127 -108 247 -108 98 0 171 37 220 109 48 72 73 177 73 313 0 277 -99 416 -297 416 l0 0" />
+          <glyph unicode="a" horiz-adv-x="886" d="M590 1116 c134 0 233 -29 297 -88 64 -58 96 -152 96 -280 l0 -748 -131 0 -35 156 -8 0 c-48 -60 -98 -104 -151 -133 -52 -29 -125 -43 -218 -43 -99 0 -182 26 -247 79 -66 52 -99 135 -99 247 0 109 43 193 129 252 86 60 219 92 398 98 l186 6 0 65 c0 92 -20 155 -59 191 -40 35 -96 53 -168 53 -58 0 -112 -9 -164 -26 -52 -17 -101 -36 -146 -58 l-55 135 c48 26 104 48 170 67 66 18 134 27 205 27 l0 0 m53 -585 c-136 -6 -231 -28 -284 -66 -52 -38 -78 -92 -78 -161 0 -62 18 -107 56 -136 37 -28 86 -43 144 -43 93 0 170 26 232 77 61 51 92 130 92 237 l0 98 -162 -6 0 0" />
+          <glyph unicode="W" horiz-adv-x="1846" d="M1878 1462 l-389 -1462 -186 0 -285 958 c-11 40 -22 79 -33 119 -11 40 -20 75 -27 106 -6 30 -11 52 -14 64 -1 -18 -8 -56 -21 -114 -13 -58 -29 -118 -48 -181 l-277 -952 -186 0 -387 1462 192 0 227 -893 c17 -63 31 -123 42 -182 12 -59 21 -114 28 -166 7 53 17 111 31 174 13 63 29 124 47 184 l258 883 190 0 269 -889 c19 -62 35 -125 49 -187 13 -62 24 -117 31 -165 6 51 16 106 28 165 13 59 27 121 43 185 l226 891 192 0 0 0" />
+          <glyph unicode="V" horiz-adv-x="1224" d="M1229 1462 l-522 -1462 -185 0 -522 1462 193 0 329 -938 c22 -60 41 -116 56 -169 15 -52 27 -102 36 -150 10 48 22 98 37 151 15 54 34 111 56 172 l327 934 195 0 0 0" />
+          <glyph unicode="T" horiz-adv-x="1092" d="M662 0 l-185 0 0 1300 -457 0 0 162 1096 0 0 -162 -454 0 0 -1300 0 0" />
+          <glyph unicode="S" horiz-adv-x="921" d="M1028 392 c0 -130 -47 -231 -141 -303 -94 -73 -221 -109 -381 -109 -82 0 -158 6 -227 18 -70 13 -128 30 -175 52 l0 176 c50 -22 111 -42 184 -60 73 -17 148 -26 226 -26 109 0 192 21 247 63 55 43 83 100 83 172 0 48 -10 88 -31 121 -20 33 -56 63 -105 91 -50 28 -120 58 -208 89 -125 45 -218 101 -282 166 -63 66 -95 155 -95 268 0 78 20 145 59 200 40 55 95 98 165 128 70 30 151 45 243 45 80 0 154 -8 221 -23 67 -15 128 -34 182 -59 l-57 -158 c-51 22 -106 41 -165 56 -59 15 -121 22 -185 22 -92 0 -161 -19 -207 -58 -47 -39 -70 -91 -70 -155 0 -49 10 -90 31 -123 20 -32 54 -62 100 -88 47 -26 110 -54 189 -84 86 -31 158 -65 218 -101 59 -36 104 -79 135 -130 31 -50 46 -114 46 -190 l0 0" />
+          <glyph unicode="R" horiz-adv-x="1041" d="M602 1462 c182 0 316 -34 403 -103 86 -69 130 -173 130 -313 0 -77 -15 -142 -43 -194 -29 -52 -66 -93 -110 -124 -44 -31 -91 -55 -140 -73 l401 -655 -215 0 -354 604 -291 0 0 -604 -184 0 0 1462 403 0 0 0 m-10 -160 l-209 0 0 -542 219 0 c119 0 206 23 260 70 55 47 82 117 82 208 0 96 -29 164 -86 204 -57 40 -146 60 -266 60 l0 0" />
+          <glyph unicode="P" horiz-adv-x="933" d="M586 1462 c191 0 330 -38 418 -113 87 -75 131 -181 131 -317 0 -81 -18 -156 -55 -227 -36 -70 -97 -127 -182 -170 -85 -44 -201 -66 -347 -66 l-168 0 0 -569 -184 0 0 1462 387 0 0 0 m-17 -158 l-186 0 0 -577 147 0 c140 0 243 22 312 67 68 45 102 122 102 230 0 94 -30 164 -90 210 -60 47 -155 70 -285 70 l0 0" />
+          <glyph unicode="N" horiz-adv-x="1155" d="M1358 0 l-215 0 -783 1214 -8 0 c3 -48 6 -107 11 -178 4 -71 6 -144 6 -219 l0 -817 -170 0 0 1462 213 0 780 -1210 8 0 c-1 22 -3 54 -5 98 -2 44 -4 92 -6 143 -2 52 -3 100 -3 144 l0 825 172 0 0 -1462 0 0" />
+          <glyph unicode="L" horiz-adv-x="821" d="M199 0 l0 1462 184 0 0 -1298 639 0 0 -164 -823 0 0 0" />
+          <glyph unicode="I" horiz-adv-x="528" d="M610 0 l-528 0 0 106 172 39 0 1170 -172 41 0 106 528 0 0 -106 -172 -41 0 -1170 172 -39 0 -106 0 0" />
+          <glyph unicode="F" horiz-adv-x="815" d="M383 -1 l-184 0 0 1463 817 0 0 -162 -633 0 0 -518 594 0 0 -162 -594 0 0 -621 0 0" />
+          <glyph unicode="D" horiz-adv-x="1167" d="M1370 745 c0 -247 -67 -433 -202 -558 -134 -125 -321 -187 -562 -187 l-407 0 0 1462 450 0 c148 0 275 -27 383 -82 108 -54 191 -135 250 -240 59 -106 88 -238 88 -395 l0 0 m-194 -6 c0 195 -49 338 -145 429 -96 91 -232 136 -408 136 l-240 0 0 -1146 199 0 c396 0 594 194 594 581 l0 0" />
+          <glyph unicode="A" horiz-adv-x="1301" d="M1116 1 l-176 452 -580 0 -174 -452 -186 0 571 1468 166 0 570 -1468 -191 0 0 0 m-395 1058 c-4 11 -11 31 -21 59 -9 29 -18 59 -27 89 -9 31 -16 55 -22 71 -9 -42 -20 -83 -33 -124 -12 -40 -22 -72 -30 -95 l-166 -442 463 0 -164 442 0 0" />
+          <glyph unicode=":" horiz-adv-x="255" d="M147 987 c0 52 13 88 37 108 25 21 54 31 88 31 36 0 66 -10 92 -31 25 -20 37 -56 37 -108 0 -49 -12 -85 -37 -107 -26 -22 -56 -32 -92 -32 -34 0 -63 10 -88 32 -24 22 -37 58 -37 107 l0 0 m0 -877 c0 51 13 86 37 107 25 20 54 30 88 30 36 0 66 -10 92 -30 25 -21 37 -56 37 -107 0 -49 -12 -84 -37 -106 -26 -22 -56 -33 -92 -33 -34 0 -63 11 -88 33 -24 22 -37 57 -37 106 l0 0" />
+          <glyph unicode="6" horiz-adv-x="959" d="M113 625 c0 105 9 209 27 310 19 102 52 194 101 277 48 82 116 148 203 197 88 49 200 74 338 74 29 0 61 -1 96 -4 34 -3 63 -8 85 -14 l0 -154 c-25 8 -53 14 -83 18 -31 5 -62 7 -94 7 -94 0 -172 -16 -235 -48 -63 -31 -112 -74 -149 -128 -36 -55 -62 -118 -78 -189 -17 -71 -27 -146 -31 -227 l12 0 c32 48 75 88 131 122 56 33 128 50 215 50 127 0 230 -39 307 -116 78 -77 117 -186 117 -328 0 -153 -42 -274 -126 -361 -84 -87 -197 -131 -339 -131 -93 0 -176 23 -252 70 -75 46 -134 117 -179 213 -44 95 -66 216 -66 362 l0 0 m495 -493 c86 0 156 27 209 82 53 56 80 141 80 258 0 92 -24 166 -71 221 -47 54 -117 82 -212 82 -64 0 -120 -14 -168 -40 -47 -27 -85 -61 -111 -102 -27 -41 -40 -83 -40 -127 0 -58 12 -117 35 -175 23 -58 58 -106 104 -143 47 -38 105 -56 174 -56 l0 0" />
+          <glyph unicode="5" horiz-adv-x="923" d="M563 898 c150 0 270 -38 359 -113 88 -75 133 -181 133 -318 0 -151 -48 -270 -145 -357 -96 -87 -230 -130 -402 -130 -75 0 -146 7 -212 20 -66 14 -122 34 -167 60 l0 170 c49 -30 109 -54 179 -71 71 -17 138 -25 202 -25 108 0 195 25 261 76 66 52 99 131 99 239 0 96 -29 169 -88 220 -58 51 -151 77 -278 77 -38 0 -82 -3 -131 -10 -49 -7 -89 -14 -119 -21 l-90 58 55 690 733 0 0 -164 -579 0 -35 -424 c23 4 55 9 94 14 40 6 83 9 131 9 l0 0" />
+          <glyph unicode="4" horiz-adv-x="1084" d="M1131 332 l-213 0 0 -331 -175 0 0 331 -700 0 0 154 688 985 187 0 0 -977 213 0 0 -162 0 0 m-388 622 c0 71 2 132 5 182 2 50 4 97 6 142 l-9 0 c-10 -26 -24 -54 -40 -84 -17 -30 -33 -55 -48 -76 l-438 -624 524 0 0 460 0 0" />
+          <glyph unicode="3" horiz-adv-x="960" d="M1010 1121 c0 -99 -28 -177 -82 -235 -55 -58 -129 -96 -221 -115 l0 -9 c117 -13 204 -50 262 -110 57 -60 86 -139 86 -236 0 -84 -20 -160 -60 -226 -39 -66 -100 -118 -183 -155 -83 -37 -189 -55 -318 -55 -77 0 -148 6 -213 17 -66 12 -129 33 -189 63 l0 168 c62 -30 128 -54 199 -71 71 -17 139 -25 205 -25 131 0 225 25 283 76 58 52 87 122 87 212 0 92 -36 158 -107 198 -72 40 -173 60 -302 60 l-142 0 0 154 144 0 c120 0 211 25 273 76 62 50 93 117 93 200 0 71 -24 126 -71 165 -48 39 -113 58 -195 58 -79 0 -147 -11 -203 -34 -56 -24 -111 -53 -166 -88 l-90 122 c52 41 117 77 194 107 77 30 165 45 263 45 153 0 267 -34 341 -102 74 -69 112 -155 112 -260 l0 0" />
+          <glyph unicode="2" horiz-adv-x="964" d="M1065 0 l-967 0 0 149 383 388 c74 73 136 139 187 196 50 57 88 114 114 169 26 55 39 116 39 181 0 81 -24 142 -71 184 -48 41 -110 62 -187 62 -71 0 -133 -12 -187 -37 -54 -24 -109 -59 -165 -102 l-96 121 c57 47 123 88 197 121 75 34 158 51 251 51 137 0 245 -35 324 -104 79 -69 119 -164 119 -285 0 -77 -16 -149 -48 -216 -31 -66 -75 -132 -131 -197 -56 -65 -121 -134 -196 -208 l-305 -301 0 -8 739 0 0 -164 0 0" />
+          <glyph unicode="1" horiz-adv-x="544" d="M727 0 l-176 0 0 1022 c0 58 1 106 2 141 1 36 3 72 6 111 -22 -22 -42 -41 -59 -56 -18 -15 -41 -34 -68 -57 l-156 -127 -94 121 396 307 149 0 0 -1462 0 0" />
+          <glyph unicode="0" horiz-adv-x="968" d="M1071 734 c0 -157 -16 -292 -49 -405 -33 -112 -85 -199 -156 -259 -71 -60 -165 -90 -282 -90 -166 0 -287 67 -366 200 -78 133 -118 317 -118 554 0 158 16 293 48 405 33 112 84 198 155 257 71 59 165 89 281 89 164 0 286 -66 366 -198 81 -131 121 -316 121 -553 l0 0 m-790 0 c0 -201 22 -351 68 -451 46 -100 124 -149 235 -149 109 0 187 49 234 148 47 99 71 249 71 452 0 199 -24 348 -71 448 -47 100 -125 149 -234 149 -111 0 -189 -49 -235 -149 -46 -100 -68 -249 -68 -448 l0 0" />
+          <glyph unicode="." horiz-adv-x="255" d="M147 110 c0 51 13 86 37 107 25 20 54 30 88 30 36 0 66 -10 92 -30 25 -21 37 -56 37 -107 0 -49 -12 -84 -37 -106 -26 -22 -56 -33 -92 -33 -34 0 -63 11 -88 33 -24 22 -37 57 -37 106 l0 0" />
+          <glyph unicode="-" horiz-adv-x="495" d="M82 469 l0 160 496 0 0 -160 -496 0 0 0" />
+          <glyph unicode=" " horiz-adv-x="530" d="" />
+        </font>
+      </defs>
+      <defs class="EmbeddedBulletChars">
+        <g id="bullet-char-template-57356" transform="matrix(0 0 0 0 0 0)">
+          <path d="M580 1141 l583 -570 -583 -571 -584 571 584 570 0 0" />
+        </g>
+        <g id="bullet-char-template-57354" transform="matrix(0 0 0 0 0 0)">
+          <path d="M8 1128 l1129 0 0 -1128 -1129 0 0 1128 0 0" />
+        </g>
+        <g id="bullet-char-template-10146" transform="matrix(0 0 0 0 0 0)">
+          <path d="M174 0 l428 739 -428 742 1282 -742 -1282 -739 0 0 m1184 739 l-1049 607 350 -607 699 0 0 0" />
+        </g>
+        <g id="bullet-char-template-10132" transform="matrix(0 0 0 0 0 0)">
+          <path d="M2015 739 l-739 -739 -559 0 543 543 -1086 0 0 393 1086 0 -543 545 557 0 741 -742 0 0" />
+        </g>
+        <g id="bullet-char-template-10007" transform="matrix(0 0 0 0 0 0)">
+          <path d="M0 -2 c-7 16 -16 29 -25 39 l381 530 c-94 256 -141 385 -141 387 0 25 13 38 40 38 9 0 21 -2 34 -5 21 4 42 12 65 25 l27 -13 111 -251 280 301 64 -25 24 25 c21 -10 41 -24 62 -43 -36 -69 -87 -143 -152 -222 -1 -1 -60 -68 -176 -200 l180 -361 c0 -27 -21 -55 -63 -84 l16 -20 c-10 -29 -28 -43 -55 -43 -31 0 -102 102 -215 305 l-293 -457 c-22 -34 -53 -51 -92 -51 -42 0 -63 17 -64 51 -7 9 -10 24 -10 44 0 9 1 19 2 30 l0 0" />
+        </g>
+        <g id="bullet-char-template-10004" transform="matrix(0 0 0 0 0 0)">
+          <path d="M285 -33 c-103 0 -174 63 -211 189 -22 72 -33 177 -33 315 0 78 14 145 41 201 34 71 87 106 158 106 53 0 88 -31 106 -94 l23 -176 c8 -64 28 -97 59 -98 l735 706 c11 11 33 17 66 17 42 0 63 -15 63 -46 l0 -122 c0 -36 -10 -64 -30 -84 l-820 -834 c-52 -53 -104 -80 -157 -80 l0 0" />
+        </g>
+        <g id="bullet-char-template-9679" transform="matrix(0 0 0 0 0 0)">
+          <path d="M813 0 c-181 0 -324 54 -430 161 -107 107 -160 250 -160 431 0 181 53 324 160 431 106 107 249 161 430 161 179 0 323 -54 432 -161 108 -107 162 -251 162 -431 0 -180 -54 -324 -162 -431 -109 -107 -253 -161 -432 -161 l0 0" />
+        </g>
+        <g id="bullet-char-template-8226" transform="matrix(0 0 0 0 0 0)">
+          <path d="M346 457 c-73 0 -137 26 -191 78 -54 51 -81 114 -81 188 0 73 27 136 81 188 54 52 118 78 191 78 73 0 134 -26 185 -79 51 -51 77 -114 77 -187 0 -75 -25 -137 -76 -188 -50 -52 -112 -78 -186 -78 l0 0" />
+        </g>
+        <g id="bullet-char-template-8211" transform="matrix(0 0 0 0 0 0)">
+          <path d="M-4 459 l1139 0 0 147 -1139 0 0 -147 0 0" />
+        </g>
+        <g id="bullet-char-template-61548" transform="matrix(0 0 0 0 0 0)">
+          <path d="M173 740 c0 163 58 303 173 419 116 115 255 173 419 173 163 0 302 -58 418 -173 116 -116 174 -256 174 -419 0 -163 -58 -303 -174 -418 -116 -116 -255 -174 -418 -174 -164 0 -303 58 -419 174 -115 115 -173 255 -173 418 l0 0" />
+        </g>
+      </defs>
+      <g class="Page">
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id3">
+            <rect class="BoundingBox" stroke="none" fill="none" x="7985" y="18985" width="4531" height="3531" />
+            <path fill="#FFFFFF" stroke="none" d="M10250 22500 l-2250 0 0 -3500 4500 0 0 3500 -2250 0 0 0" />
+            <path fill="none" stroke="#1ABC9C" stroke-width="30" stroke-linejoin="round" d="M10250 22500 l-2250 0 0 -3500 4500 0 0 3500 -2250 0 0 0" />
+            <text class="SVGTextShape">
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="19763">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="1098" fill="#B2B2B2" stroke="none" style="white-space:pre;">FW01</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8769" y="20339">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#B2B2B2" stroke="none" style="white-space:pre;"> AS: 65100</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="20915">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="1906" fill="#2C3E50" stroke="none" style="white-space:pre;">Vrf-Public</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="21491">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#2C3E50" stroke="none" style="white-space:pre;"> AS: 65100</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="22067">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="3085" fill="#2C3E50" stroke="none" style="white-space:pre;"> RID: 10.254.0.3</tspan>
+                </tspan>
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.LineShape">
+          <g id="id4">
+            <rect class="BoundingBox" stroke="none" fill="none" x="12485" y="17235" width="4031" height="1781" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M12500 17250 l4000 1750" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.LineShape">
+          <g id="id5">
+            <rect class="BoundingBox" stroke="none" fill="none" x="10235" y="17235" width="31" height="1781" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M10250 17250 l0 1750" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.LineShape">
+          <g id="id6">
+            <rect class="BoundingBox" stroke="none" fill="none" x="10235" y="17235" width="4031" height="1781" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M10250 19000 l4000 -1750" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id7">
+            <rect class="BoundingBox" stroke="none" fill="none" x="9735" y="18670" width="1032" height="596" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M10751 18968 c0 50 -23 98 -67 141 -44 43 -107 78 -183 103 -76 25 -163 38 -250 38 -88 0 -175 -13 -251 -38 -76 -25 -139 -60 -183 -103 -44 -43 -67 -91 -67 -141 0 -50 23 -98 67 -141 44 -43 107 -78 183 -103 76 -25 163 -38 251 -38 87 0 174 13 250 38 76 25 139 60 183 103 44 43 67 91 67 141 l0 0" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id8">
+            <rect class="BoundingBox" stroke="none" fill="none" x="7985" y="13734" width="4531" height="3532" />
+            <path fill="#FFFFFF" stroke="none" d="M10250 17250 l-2250 0 0 -3501 4500 0 0 3501 -2250 0 0 0" />
+            <path fill="none" stroke="#1ABC9C" stroke-width="30" stroke-linejoin="round" d="M10250 17250 l-2250 0 0 -3501 4500 0 0 3501 -2250 0 0 0" />
+            <text class="SVGTextShape">
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="14513">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2740" fill="#B2B2B2" stroke="none" style="white-space:pre;">ServiceLeaf01</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="15089">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#B2B2B2" stroke="none" style="white-space:pre;"> AS: 65001</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="15665">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2073" fill="#2C3E50" stroke="none" style="white-space:pre;">VRF-Public</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="16241">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#2C3E50" stroke="none" style="white-space:pre;"> AS: 65201</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="8250" y="16817">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="3085" fill="#2C3E50" stroke="none" style="white-space:pre;"> RID: 10.254.0.1</tspan>
+                </tspan>
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id9">
+            <rect class="BoundingBox" stroke="none" fill="none" x="14235" y="18985" width="4531" height="3531" />
+            <path fill="#FFFFFF" stroke="none" d="M16500 22500 l-2250 0 0 -3500 4500 0 0 3500 -2250 0 0 0" />
+            <path fill="none" stroke="#1ABC9C" stroke-width="30" stroke-linejoin="round" d="M16500 22500 l-2250 0 0 -3500 4500 0 0 3500 -2250 0 0 0" />
+            <text class="SVGTextShape">
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="19763">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="1098" fill="#B2B2B2" stroke="none" style="white-space:pre;">FW02</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="15019" y="20339">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#B2B2B2" stroke="none" style="white-space:pre;"> AS: 65100</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="20915">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="1906" fill="#2C3E50" stroke="none" style="white-space:pre;">Vrf-Public</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="21491">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#2C3E50" stroke="none" style="white-space:pre;"> AS: 65100</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="22067">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="3085" fill="#2C3E50" stroke="none" style="white-space:pre;"> RID: 10.254.0.4</tspan>
+                </tspan>
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.LineShape">
+          <g id="id10">
+            <rect class="BoundingBox" stroke="none" fill="none" x="16485" y="17235" width="31" height="1781" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M16500 17250 l0 1750" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id11">
+            <rect class="BoundingBox" stroke="none" fill="none" x="14235" y="13734" width="4531" height="3532" />
+            <path fill="#FFFFFF" stroke="none" d="M16500 17250 l-2250 0 0 -3501 4500 0 0 3501 -2250 0 0 0" />
+            <path fill="none" stroke="#1ABC9C" stroke-width="30" stroke-linejoin="round" d="M16500 17250 l-2250 0 0 -3501 4500 0 0 3501 -2250 0 0 0" />
+            <text class="SVGTextShape">
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="14513">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2740" fill="#B2B2B2" stroke="none" style="white-space:pre;">ServiceLeaf02</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="15089">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#B2B2B2" stroke="none" style="white-space:pre;"> AS: 65002</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="15665">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2073" fill="#2C3E50" stroke="none" style="white-space:pre;">VRF-Public</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="16241">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2047" fill="#2C3E50" stroke="none" style="white-space:pre;"> AS: 65201</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="14500" y="16817">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="3085" fill="#2C3E50" stroke="none" style="white-space:pre;"> RID: 10.254.0.2</tspan>
+                </tspan>
+              </tspan>
+            </text>
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id12">
+            <rect class="BoundingBox" stroke="none" fill="none" x="15985" y="18671" width="1032" height="596" />
+            <path fill="none" stroke="#5983B0" stroke-width="30" stroke-linejoin="round" d="M17001 18969 c0 50 -23 98 -67 141 -44 43 -107 78 -183 103 -76 25 -163 38 -250 38 -88 0 -175 -13 -251 -38 -76 -25 -139 -60 -183 -103 -44 -43 -67 -91 -67 -141 0 -50 23 -98 67 -141 44 -43 107 -78 183 -103 76 -25 163 -38 251 -38 87 0 174 13 250 38 76 25 139 60 183 103 44 43 67 91 67 141 l0 0" />
+          </g>
+        </g>
+        <g class="com.sun.star.drawing.CustomShape">
+          <g id="id13">
+            <rect class="BoundingBox" stroke="none" fill="none" x="1735" y="14641" width="4531" height="1374" />
+            <path fill="#FFFFFF" stroke="none" d="M4000 15999 l-2250 0 0 -1343 4500 0 0 1343 -2250 0 0 0" />
+            <path fill="none" stroke="#1ABC9C" stroke-width="30" stroke-linejoin="round" d="M4000 15999 l-2250 0 0 -1343 4500 0 0 1343 -2250 0 0 0" />
+            <text class="SVGTextShape">
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="2739" y="15205">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="2523" fill="#2C3E50" stroke="none" style="white-space:pre;">Transit VLAN</tspan>
+                </tspan>
+              </tspan>
+              <tspan class="TextParagraph">
+                <tspan class="TextPosition" x="3516" y="15781">
+                  <tspan font-family="Noto Sans, sans-serif" font-size="423" font-weight="normal" lengthAdjust="spacingAndGlyphs" textLength="969" fill="#2C3E50" stroke="none" style="white-space:pre;">1002</tspan>
+                </tspan>
+              </tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <path class="write-flat-pen" fill="#000000" stroke-width="1.6" __comx="305.263" __comy="287.923" __timestamp="0x19ab2018013" d="M304.463 287.656 l0 1.6 1.6 0 0 -1.6" />
+    <path class="write-flat-pen" fill="#000000" stroke-width="1.6" __comx="89.474" __comy="196.695" __timestamp="0x19ab201f34d" d="M88.674 196.428 l0 1.6 1.6 0 0 -1.6" />
+    <path class="write-flat-pen" fill="#000000" stroke-width="1.6" __comx="148.684" __comy="137.579" __timestamp="0x19ab20209cc" d="M147.446 138.379 l2.477 0 0 -1.6 -2.477 0" />
+  </g>
+</svg>
+<defs>
+<style type="text/css"><![CDATA[
+  #write-document, #write-doc-background { width: 1026px;  height: 539px; }
+]]></style>
+</defs>
+</svg>
