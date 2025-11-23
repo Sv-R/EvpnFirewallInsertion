@@ -18,3 +18,9 @@ ansible-playbook -i clab-FirewallInsertion/ansible-inventory.yml ansible/deploy.
 Afterwards the lab should be fully functional. To confirm connect to the clab-FirewallInsertion-worker01 node and ping 10.100.0.1 which is located on the external router.
 
 The traffic will first be routed to the firewalls using the Vrf_CustPriv01 where it will be source natted into the public vrf.
+
+# Topology
+
+![Overview of the lab toplogy](images/LabOverview.svg)
+
+The topology in this lab is a scaled down spine leaf setup. There is only one spine and one worker leaf to make the lab a little easier to run. 
